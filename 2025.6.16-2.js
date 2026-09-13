@@ -19,7 +19,7 @@ let allSensorData = {};
 
 mountChartModal();
 
-// ✅ 지역이 일치하는 센서만 렌더링
+// 지역이 일치하는 센서만 렌더링
 function renderRegionSensors() {
   mainContainer.innerHTML = "";
   container.innerHTML = "";
@@ -48,7 +48,7 @@ function renderRegionSensors() {
   }
 }
 
-// ✅ Firebase 실시간 연동
+// Firebase 실시간 연동
 get(sensorRef).then((snapshot) => {
   allSensorData = snapshot.val() || {};
   renderRegionSensors();
@@ -62,7 +62,7 @@ onChildChanged(sensorRef, (snap) => {
   renderRegionSensors();
 });
 
-// ✅ 더보기 토글
+//  더보기 토글
 toggleButton.addEventListener("click", () => {
   container.classList.toggle("hidden");
   toggleButton.textContent = container.classList.contains("hidden")

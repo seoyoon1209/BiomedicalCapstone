@@ -1,4 +1,4 @@
-// ✅ 일별 통계 차트 팝업 컴포넌트
+// 일별 통계 차트 팝업 컴포넌트
 // mountChartModal() 로 한 번 화면에 붙여두고,
 // openDailyChart(sensorId) 로 특정 센서의 일별 그래프를 띄웁니다.
 import { dailyStatsRef, get } from "../firebase.js";

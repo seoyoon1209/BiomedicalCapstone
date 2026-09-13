@@ -1,4 +1,4 @@
-// ✅ 메인 대시보드 페이지 진입점
+//  메인 대시보드 페이지 진입점
 // 실제 로직은 js/ 아래 컴포넌트 모듈에 있고, 여기서는 "조립"만 합니다.
 import { sensorRef, get, onChildAdded, onChildChanged } from "./js/firebase.js";
 import { createSensorCard } from "./js/components/sensorCard.js";
@@ -20,7 +20,7 @@ let selectedUsers = {};
 // 차트 팝업을 한 번만 붙여둠
 mountChartModal();
 
-// ✅ 전체 센서를 "긴급(value===2)" 과 "일반" 으로 나눠 렌더링
+//  전체 센서를 "긴급(value===2)" 과 "일반" 으로 나눠 렌더링
 function renderMainSensors() {
   container.classList.remove("hidden");
   mainContainer.innerHTML = "";
@@ -35,7 +35,7 @@ function renderMainSensors() {
   });
 }
 
-// ✅ 사이드바에서 체크한 사용자만 카드로 표시
+// 사이드바에서 체크한 사용자만 카드로 표시
 function renderSelectedUsers() {
   filteredContainer.innerHTML = "";
   Object.entries(selectedUsers).forEach(([id, sensor]) => {
@@ -45,7 +45,7 @@ function renderSelectedUsers() {
   });
 }
 
-// ✅ 선택한 지역에 속한 센서들의 체크박스 목록을 만든다
+//  선택한 지역에 속한 센서들의 체크박스 목록을 만든다
 function buildUserList({ sido, sigungu, dong }) {
   userListContainer.innerHTML = "";
   filteredContainer.innerHTML = "";
@@ -100,7 +100,7 @@ mountLocationFilter({
   locationData = filter.locationData;
 });
 
-// ✅ Firebase 실시간 연동
+// Firebase 실시간 연동
 get(sensorRef).then((snapshot) => {
   allSensorData = snapshot.val() || {};
   renderMainSensors();
@@ -114,7 +114,7 @@ onChildChanged(sensorRef, (snap) => {
   renderMainSensors();
 });
 
-// ✅ 더보기 토글
+//  더보기 토글
 toggleButton.addEventListener("click", () => {
   container.classList.toggle("hidden");
   toggleButton.textContent = container.classList.contains("hidden")
@@ -122,7 +122,7 @@ toggleButton.addEventListener("click", () => {
     : "더보기 닫기";
 });
 
-// ✅ 알림 소리 활성화 (브라우저는 사용자가 클릭해야 소리를 허용함)
+//  알림 소리 활성화 (브라우저는 사용자가 클릭해야 소리를 허용함)
 enableAudioBtn.addEventListener("click", () => {
   const audio = document.getElementById("alertSoundTemplate");
   if (!audio) return;

@@ -1,4 +1,4 @@
-// ✅ 센서 카드 컴포넌트
+// 센서 카드 컴포넌트
 // createSensorCard(...) 는 카드 DOM 요소를 "만들어서 반환"만 합니다.
 // 어디에 붙일지는 호출한 쪽에서 결정합니다. (append 는 호출부 책임)
 import { db, ref, update } from "../firebase.js";

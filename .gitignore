@@ -1,0 +1,7 @@
+# Firebase 개인 설정 (공개 저장소에 올리지 않음)
+js/firebase-config.js
+
+# OS / 편집기
+.DS_Store
+.idea/
+.vscode/

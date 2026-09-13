@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <title>ESP32 센서 대시보드</title>
   <link rel="stylesheet" href="2025.6.16-2.css" />
-  <!-- ✅ 아이콘 라이브러리 (Font Awesome) -->
+  <!--아이콘 라이브러리 (Font Awesome) -->
   <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -47,7 +47,7 @@
     updateDateTime();
     setInterval(updateDateTime, 1000);
 
-    // ✅ 지역명 표시 (h1 동적 설정)
+    // 지역명 표시 (h1 동적 설정)
     const urlParams = new URLSearchParams(window.location.search);
     const sido = urlParams.get("sido") || "";
     const sigungu = urlParams.get("sigungu") || "";
@@ -56,7 +56,7 @@
     document.getElementById("areaTitle").textContent = `${fullAddress} 발패드 사용자 상태값`;
   </script>
 
-  <!-- ✅ 2페이지용 JS 로드 -->
+  <!-- 2페이지용 JS 로드 -->
   <script type="module" src="2025.6.16-2.js"></script>
 </body>
 </html>
